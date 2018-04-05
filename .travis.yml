@@ -1,32 +1,20 @@
 language: generic
+sudo: false
+dist: "trusty"
 addons:
   apt:
     packages:
-<<<<<<< HEAD
       - python3
       - python3-pip
-=======
-      - git:i386
-      - python3:i386
-      - python3-pip:i386
->>>>>>> 3afbf76b3e24245488b4247b37f204da0e4ba7fd
       #- python3-lxml:i386
 env:
   global:
 # global parameters
 before_install:
   - pip3 install lxml matplotlib numpy scipy pandas mplleaflet folium seawater oceans netCDF4
-<<<<<<< HEAD
 install:
 # nothing to do
 script:
   - python3 $HOME/tJOG/tJOG.py $HOME/tJOG/loop.gpx
   - python3 $HOME/tJOG/tJOG.py -ADL $HOME/tJOG/loop.gpx
-=======
-  - git clone https://github.com/micooke/tJOG.git .
-install:
-# nothing to do
-script:
-  - python3 $HOME/tJOG.py $HOME/loop.gpx
-  - python3 $HOME/tJOG.py -ADL $HOME/loop.gpx
->>>>>>> 3afbf76b3e24245488b4247b37f204da0e4ba7fd
+  
