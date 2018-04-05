@@ -1,0 +1,19 @@
+language: generic
+addons:
+  apt:
+    packages:
+      - git:i386
+      - python3:i386
+      - python3-pip:i386
+      #- python3-lxml:i386
+env:
+  global:
+# global parameters
+before_install:
+  - pip3 install lxml matplotlib numpy scipy pandas mplleaflet folium seawater oceans netCDF4
+  - git clone https://github.com/micooke/tJOG.git .
+install:
+# nothing to do
+script:
+  - python3 $HOME/tJOG.py $HOME/loop.gpx
+  - python3 $HOME/tJOG.py -ADL $HOME/loop.gpx
