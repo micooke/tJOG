@@ -1,0 +1,17 @@
+language: generic
+addons:
+  apt:
+    packages:
+      - python3
+      - python3-pip
+      #- python3-lxml:i386
+env:
+  global:
+# global parameters
+before_install:
+  - pip3 install lxml matplotlib numpy scipy pandas mplleaflet folium seawater oceans netCDF4
+install:
+# nothing to do
+script:
+  - python3 $HOME/tJOG/tJOG.py $HOME/tJOG/loop.gpx
+  - python3 $HOME/tJOG/tJOG.py -ADL $HOME/tJOG/loop.gpx
